@@ -7,11 +7,12 @@ class FinanceManager {
 
     private array $categories = [
         1 => ['category' => 'Business', 'type' => 'Income'],
-        2 => ['category' => 'Food', 'type' => 'Expense'],
-        3 => ['category' => 'Family', 'type' => 'Expense'],
-        4 => ['category' => 'Tuition', 'type' => 'Expense'],
-        5 => ['category' => 'Teaching', 'type' => 'Income'],
-        6 => ['category' => 'Other Category', 'type' => 'Custom Type']
+        2 => ['category' => 'Teaching', 'type' => 'Income'],
+        3 => ['category' => 'Freelancing', 'type' => 'Income'],
+        4 => ['category' => 'Food', 'type' => 'Expense'],
+        5 => ['category' => 'Family', 'type' => 'Expense'],
+        6 => ['category' => 'Tour', 'type' => 'Expense'],
+        7 => ['category' => 'Other Category', 'type' => 'Custom Type']
     ];
 
     public function addIncome() {
@@ -58,6 +59,10 @@ class FinanceManager {
                 $type = $results[4]['type'];
                 break;
             case 6:
+                $category = $results[5]['category'];
+                $type = $results[5]['type'];
+                break;
+            case 7:
                 $category = trim(readline("Enter custom category name: "));
                 while (empty($category)|(is_numeric($category))) {
                     echo "You must give a valid category name:\n";
@@ -135,6 +140,10 @@ class FinanceManager {
                 $type = $expenses[4]['type'];
                 break;
             case 6:
+                $category = $expenses[5]['category'];
+                $type = $expenses[5]['type'];
+                break;
+            case 7:
                 $category = trim(readline("Enter custom category name: "));
                 while (empty($category)|(is_numeric($category))) {
                     echo "You must give a valid category name:\n";
